@@ -1,16 +1,14 @@
 package main
 
-func main() {
-	sales := []int{12_000, 8_000, 15_000, 8_000, 10_000}
-	for _, s := range sales {
-		println(bonus(s))
-	}
-}
+func main() {}
 
-func bonus(s int) int {
-	if s >= 10_000 {
-		b := (s / 100) * 5
-		return b
+func bonus(sale int) int {
+	minSaleValue := 10_000
+	if sale >= minSaleValue {
+		percent := 100
+		bonusValue := 5
+		managerBonus := (sale / percent) * bonusValue
+		return managerBonus
 	}
 	return 0
 }
