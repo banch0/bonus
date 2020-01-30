@@ -5,17 +5,21 @@ import (
 )
 
 func TestBonus(t *testing.T) {
-	sales := []int{15_000, 24_000, 11_000, 8_000, 10_000}
-	for i, s := range sales {
-		r := bonus(s)
-		if i == 0 && r != 750 {
-			t.Error("Test error")
-		} else if i == 1 && r != 1200 {
-			t.Error("Test error")
-		} else if i == 2 && r != 550 {
-			t.Error("Test error")
-		} else if i == 4 && r != 500 {
-			t.Error("Test error")
+	TestCases := []struct {
+		name  string
+		sales int
+		want  int
+	}{
+		{name: "Sale 12000", sales: 12_000, want: 600},
+		{name: "Sale 8000", sales: 8_000, want: 0},
+		{name: "Sale 15000", sales: 15_000, want: 750},
+		{name: "Sale 10000", sales: 10_000, want: 500},
+	}
+
+	for _, testCase := range TestCases {
+		got := bonus(testCase.sales)
+		if got != testCase.want {
+			t.Error("bonus test:", testCase.name, "got:", got, "want:", testCase.want)
 		}
 	}
 }
