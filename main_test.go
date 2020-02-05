@@ -7,13 +7,12 @@ import (
 func TestBonus(t *testing.T) {
 	TestCases := []struct {
 		name  string
-		sales int
+		sales []int
 		want  int
 	}{
-		{name: "Sale 12000", sales: 12_000, want: 600},
-		{name: "Sale 8000", sales: 8_000, want: 0},
-		{name: "Sale 15000", sales: 15_000, want: 750},
-		{name: "Sale 10000", sales: 10_000, want: 500},
+		{name: "Sale 12000", sales: []int{12_000}, want: 600},
+		{name: "Sale 8000", sales: []int{8_000}, want: 0},
+		{name: "Sale 10000", sales: []int{10_000}, want: 500},
 	}
 
 	for _, testCase := range TestCases {
