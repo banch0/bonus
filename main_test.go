@@ -10,9 +10,9 @@ func TestBonus(t *testing.T) {
 		sales []int
 		want  int
 	}{
-		{name: "Sale 12000", sales: []int{12_000}, want: 600},
-		{name: "Sale 8000", sales: []int{8_000}, want: 0},
-		{name: "Sale 10000", sales: []int{10_000}, want: 500},
+		{name: "Sale 12000", sales: []int{12_000, 9_000, 7_000, 20_000}, want: 600},
+		{name: "Sale 8000", sales: []int{8_000, 6_000, 7_000, 5_000}, want: 0},
+		{name: "Sale 10000", sales: []int{10_000, 9_000, 8_000, 6_000}, want: 500},
 	}
 
 	for _, testCase := range TestCases {
